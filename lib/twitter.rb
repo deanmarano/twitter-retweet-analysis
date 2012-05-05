@@ -12,6 +12,7 @@ class TwitterClient
           tweet = user.tweets.new(
             text: t['text'],
             twitter_id: t['id'],
+            tweeted_at: t['created_at'],
             retweet_of_user_id: retweeter_id)
           tweet.save
         end

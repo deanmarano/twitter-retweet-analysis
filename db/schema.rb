@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120505204105) do
   create_table "tweets", :force => true do |t|
     t.integer  "twitter_id",         :limit => 8
     t.integer  "user_id"
+    t.datetime "tweeted_at"
     t.string   "text"
     t.integer  "retweet_of_user_id"
     t.datetime "created_at",                      :null => false
