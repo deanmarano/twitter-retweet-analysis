@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">
+    <meta lastmodifieddate="2009-03-20">
+        <creator>Dean Marano</creator>
+        <description>A sampling of Twitter retweets.</description>
+    </meta>
+    <graph mode="static" defaultedgetype="directed">
+        <nodes>
+        <% @users.each do |user|%>
+          <node id="<%= user.id%>" label="<%= user.user_name%>" />
+        <% end %>
+        </nodes>
+        <edges>
+        <% @tweets.each do |tweet|%>
+          <edge id="<%= tweet.id%>" source="<%= tweet.user_id%>" target="<%= tweet.retweet_of_user_id %>" />
+        <% end %>
+        </edges>
+    </graph>
+</gexf>
